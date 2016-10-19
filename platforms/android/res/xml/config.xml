@@ -10,7 +10,7 @@
     <feature name="Flashlight">
         <param name="android-package" value="nl.xservices.plugins.Flashlight" />
     </feature>
-    <name>HelloCordova</name>
+    <name>FlashLight</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
