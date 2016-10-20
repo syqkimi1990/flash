@@ -83,6 +83,10 @@ border-bottom-left-radius:15px 255px;
     text-align: center;
 }
 
+.disabled {
+    background: #dddddd;
+}
+
 /*@media (max-width:620px){*/
     /*body{*/
     /*h1{*/

@@ -2,6 +2,8 @@ var resultDiv;
 var timer;
 var counter = 100;
 var flashLightButton = document.getElementById("flashLight");
+var rechargeButton = document.getElementById("recharge");
+var resetButton = document.getElementById("reset");
 
 document.addEventListener("deviceready", init, false);
 document.addEventListener("backbutton", function() {
@@ -11,13 +13,18 @@ document.addEventListener("backbutton", function() {
 document.addEventListener("resume", onResume, false);
 
 function init() {
-	document.querySelector("#startScan").addEventListener("touchend", startScan, false);
+	document.querySelector("#recharge").addEventListener("touchend", startScan, false);
 	document.querySelector("#flashLight").addEventListener("touchend", flashLight, false);
 	document.querySelector("#reset").addEventListener("touchend", reset, false);
 	resultDiv = document.querySelector("#results");
 }
 
 function startScan() {
+	rechargeButton.classList.add("disabled");
+	setTimeout(function(){
+		rechargeButton.classList.remove("disabled");
+	}, 500)
+
 	if (window.plugins.flashlight.isSwitchedOn()) {
 		window.plugins.flashlight.switchOff(scanQrCode, function() {window.alert("Flashlight switch on fails");});
 		window.clearInterval(timer);
@@ -58,11 +65,10 @@ function flashLight() {
 				}, 100);
 
 			} else if (flashLightButton.innerHTML=="Close Flashlight") {
-				flashLightButton.innerHTML = "Open Flashlight";
-				if (timer) {
-					window.clearInterval(timer);
-					timer = null;
-				}
+			    if (timer) {
+                    window.clearInterval(timer);
+                    timer = null;
+                }
 
 				if(counter <= 0){
 					window.alert('No time left (10s used up)');
@@ -72,6 +78,7 @@ function flashLight() {
 
 				window.plugins.flashlight.switchOff(
 					function () {
+					flashLightButton.innerHTML = "Open Flashlight";
 					}, // optional success callback
 					function () {
 						window.alert("Flashlight switch off fails");
@@ -80,6 +87,13 @@ function flashLight() {
 			} else {
 				//do nothing
 			}
+
+			document.querySelector("#flashLight").removeEventListener("touchend", flashLight, false);
+			flashLightButton.classList.add("disabled");
+			setTimeout(function(){
+				document.querySelector("#flashLight").addEventListener("touchend", flashLight, false);
+				flashLightButton.classList.remove("disabled");
+			}, 1000)
 
 
 		} else {
@@ -90,6 +104,11 @@ function flashLight() {
 }
 
 function reset() {
+	resetButton.classList.add("disabled");
+	setTimeout(function(){
+		resetButton.classList.remove("disabled");
+	}, 500)
+
 	if (window.plugins.flashlight.isSwitchedOn()) {
 		window.plugins.flashlight.switchOff();
 		if (timer) {
