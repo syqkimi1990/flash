@@ -1,7 +1,10 @@
 /*
 * Constant define
 */
-var BATTERY_LIFE = 400 //4000 milliseconds
+var BATTERY_LIFE = 400; //4000 milliseconds
+var LIGHT_ON = "Light On";
+var LIGHT_OFF = "Light Off";
+var OUT_OF_BATTERY = "No More Battery";
 
 /*
 **  Global variable define
@@ -43,7 +46,7 @@ function startScan() {
 	if (window.plugins.flashlight.isSwitchedOn()) {
 		window.plugins.flashlight.switchOff(scanQrCode, function() {window.alert("Flashlight switch on fails");});
 		window.clearInterval(timer);
-		flashLightButton.innerHTML = "Open Flashlight";
+		flashLightButton.innerHTML = LIGHT_ON;
 	} else {
 		scanQrCode();
 	}
@@ -57,13 +60,13 @@ function flashLight() {
 	setTimeout(function(){
     	document.querySelector("#flashLight").addEventListener("touchend", flashLight, false);
 		flashLightButton.classList.remove("disabled");
-    }, 700)
+    }, 500)
 
 	window.plugins.flashlight.available(function(isAvailable) {
 		if (isAvailable) {
 
 			//Switch on the flashlight
-			if (window.plugins.flashlight.isSwitchedOn() == false && counter > 0 && flashLightButton.innerHTML == "Open Flashlight") {
+			if (window.plugins.flashlight.isSwitchedOn() == false && counter > 0 && flashLightButton.innerHTML == LIGHT_ON) {
 
 				// switch on flash light
 				window.plugins.flashlight.switchOn(
@@ -73,10 +76,10 @@ function flashLight() {
 						window.alert("Flashlight switch on fails");
 						window.plugins.flashlight.switchOff();
 					}, // error callback
-					{intensity: 0.3}
+					{intensity: 0.5}
 					);
 
-				flashLightButton.innerHTML = "Close Flashlight";
+				flashLightButton.innerHTML = LIGHT_OFF;
 				// Start timer when the flash light is on
 				timer = window.setInterval(function() {
 					counter--;
@@ -84,21 +87,21 @@ function flashLight() {
 						window.plugins.flashlight.switchOff();
 						window.clearInterval(timer);
 						counter = 0;
-						flashLightButton.innerHTML = "No More Battery";
+						flashLightButton.innerHTML = OUT_OF_BATTERY;
 						flashLightButton.classList.add("disabled");
 					} else {
 						resultDiv.innerHTML = "Battery Time Left (s):" + (counter/10).toFixed(1).toString();
 					}
 				}, 100);
-				
 
-			} else if (flashLightButton.innerHTML=="Close Flashlight") {
+
+			} else if (flashLightButton.innerHTML == LIGHT_OFF) {
 			    if (timer) {
                     window.clearInterval(timer);
                     timer = null;
                 }
 
-				flashLightButton.innerHTML = "Open Flashlight";
+				flashLightButton.innerHTML = LIGHT_ON;
 
 				window.plugins.flashlight.switchOff(
 					function () {
@@ -138,7 +141,7 @@ function reset() {
 
 	//Reset the program variables
 	timer = null;
-	flashLightButton.innerHTML = "Open Flashlight";
+	flashLightButton.innerHTML = LIGHT_ON;
 	flashLightButton.classList.remove("disabled");
 	counter = BATTERY_LIFE;
 	resultDiv.innerHTML = "Battery Time Left (s):" + (counter/10).toFixed(1).toString();
@@ -154,8 +157,7 @@ function scanQrCode() {
 					{
 						counter = BATTERY_LIFE;
 						resultDiv.innerHTML = "Battery Time Left (s):" + (counter/10).toFixed(1).toString();
-						window.alert("You have another 10s to use");
-						flashLightButton.innerHTML = "Open Flashlight";
+						window.alert("You have another 40s to use");
 					}
 				}
 			},

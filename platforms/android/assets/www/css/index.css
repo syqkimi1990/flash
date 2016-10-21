@@ -86,21 +86,3 @@ border-bottom-left-radius:15px 255px;
 .disabled {
     background: #dddddd;
 }
-
-/*@media (max-width:620px){*/
-    /*body{*/
-    /*h1{*/
-        /*margin-top:2rem;*/
-    /*}*/
-/*& section{*/
-      /*display:flex;*/
-      /*flex-direction:column;*/
-      /*justify-content:center;*/
-      /*margin-bottom:1rem;*/
-/*& button{*/
-      /*align-self:center;*/
-      /*margin-bottom:2rem;*/
-  /*}*/
-/*}*/
-/*}*/
-/*}*/
