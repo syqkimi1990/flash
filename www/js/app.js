@@ -5,6 +5,7 @@ var BATTERY_LIFE = 400; //4000 milliseconds
 var LIGHT_ON = "Light On";
 var LIGHT_OFF = "Light Off";
 var OUT_OF_BATTERY = "No More Battery";
+var SERVER_URL = "http://192.168.1.103:3000";
 
 /*
 **  Global variable define
@@ -31,7 +32,7 @@ document.addEventListener("resume", onResume, false);
 function init() {
 	document.querySelector("#recharge").addEventListener("touchend", startScan, false);
 	document.querySelector("#flashLight").addEventListener("touchend", flashLight, false);
-	document.querySelector("#reset").addEventListener("touchend", reset, false);
+	document.querySelector("#reset").addEventListener("touchend", tryReset, false);
 	resultDiv = document.querySelector("#results");
 }
 
@@ -43,13 +44,13 @@ function startScan() {
 	}, 500)
 
 	//If recharge button is pressed when the flash light is on, turn off first
-	if (window.plugins.flashlight.isSwitchedOn()) {
-		window.plugins.flashlight.switchOff(scanQrCode, function() {window.alert("Flashlight switch on fails");});
-		window.clearInterval(timer);
-		flashLightButton.innerHTML = LIGHT_ON;
-	} else {
+	// if (window.plugins.flashlight.isSwitchedOn()) {
+	// 	window.plugins.flashlight.switchOff(scanQrCode, function() {window.alert("Flashlight switch on fails");});
+	// 	window.clearInterval(timer);
+	// 	flashLightButton.innerHTML = LIGHT_ON;
+	// } else {
 		scanQrCode();
-	}
+	// }
 }
 
 function flashLight() {
@@ -60,7 +61,7 @@ function flashLight() {
 	setTimeout(function(){
     	document.querySelector("#flashLight").addEventListener("touchend", flashLight, false);
 		flashLightButton.classList.remove("disabled");
-    }, 500)
+    }, 500);
 
 	window.plugins.flashlight.available(function(isAvailable) {
 		if (isAvailable) {
@@ -122,15 +123,6 @@ function flashLight() {
 }
 
 function reset() {
-
-	//disable the flashlight button for 0.5s when the reset is pressed to prevent quick click
-	resetButton.classList.add("disabled");
-	document.querySelector("#flashLight").removeEventListener("touchend", flashLight, false);
-	setTimeout(function(){
-		document.querySelector("#flashLight").addEventListener("touchend", flashLight, false);
-		resetButton.classList.remove("disabled");
-	}, 500)
-
 	//if the reset is pressed when the light is on, turn off it first
 	if (window.plugins.flashlight.isSwitchedOn()) {
 		window.plugins.flashlight.switchOff();
@@ -147,6 +139,19 @@ function reset() {
 	resultDiv.innerHTML = "Battery Time Left (s):" + (counter/10).toFixed(1).toString();
 }
 
+function tryReset(){
+	//disable the flashlight button for 0.5s when the reset is pressed to prevent quick click
+	resetButton.classList.add("disabled");
+	document.querySelector("#flashLight").removeEventListener("touchend", flashLight, false);
+	setTimeout(function(){
+		document.querySelector("#flashLight").addEventListener("touchend", flashLight, false);
+		resetButton.classList.remove("disabled");
+	}, 500);
+
+	//vaildate first before resetting
+	validate('/client/reset',function(is_ok){if (is_ok){reset();}});
+}
+
 function scanQrCode() {
 	setTimeout(function (){
 		cordova.plugins.barcodeScanner.scan(
@@ -155,9 +160,14 @@ function scanQrCode() {
 				{
 					if(result.format == "QR_CODE")
 					{
-						counter = BATTERY_LIFE;
-						resultDiv.innerHTML = "Battery Time Left (s):" + (counter/10).toFixed(1).toString();
-						window.alert("You have another 40s to use");
+						var text = result.text;
+						var substrs = text.split(',');
+						if (substrs[0] == 'battery'){
+							validate('/client/battery?battery_id='+substrs[1],function(is_ok){recharge();});
+						}else if(substrs[0] == 'person'){
+							//TODO: when the QR code represents a person, try to revive him
+						}
+						
 					}
 				}
 			},
@@ -168,12 +178,35 @@ function scanQrCode() {
 	}, 500);
 }
 
+function recharge() {
+	counter = BATTERY_LIFE;
+	resultDiv.innerHTML = "Battery Time Left (s):" + (counter/10).toFixed(1).toString();
+}
+
 function exitApp() {
 	if (timer) {
 		window.clearInterval(timer);
 		timer = null;
 	}
 	navigator.app.exitApp();
+}
+
+function validate(url,callback) {
+	//send a request to the server to validate if the request is good to proceed
+	url = SERVER_URL+url;
+	if (url){
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.open('GET',url,true);
+		xmlhttp.send();
+		xmlhttp.onreadystatechange=function(){
+			if (xmlhttp.readyState==4){
+				if(xmlhttp.status == 200 || xmlhttp.status == 304){
+					callback(true);
+				}
+			}
+		}
+	}
+//	setTimeout(function(){callback(true)},500);
 }
 
 function onResume() {
