@@ -21,6 +21,9 @@
     <feature name="BarcodeScanner">
         <param name="ios-package" value="CDVBarcodeScanner" />
     </feature>
+    <feature name="Accelerometer">
+        <param name="ios-package" value="CDVAccelerometer" />
+    </feature>
     <name>FlashLight</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

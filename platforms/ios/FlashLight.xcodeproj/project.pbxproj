@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
 		1A78D837ADE947A69718FAEE /* zxing-all-in-one.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D29E2874A9442F1AF8B31A2 /* zxing-all-in-one.cpp */; };
@@ -24,6 +23,8 @@
 		C73275D962AC4936AA90C787 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64088F6F93F4387A941D5A2 /* CoreVideo.framework */; };
 		D579FE3D5AD14F019B115B76 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2111D19CE5BC4078A86CB784 /* libiconv.dylib */; };
 		EE84CEB4EEBF4139ACCB1FD2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FB13667B964253B18028BB /* AudioToolbox.framework */; };
+		C8A4C2FFFBA94DF081385D44 /* CDVAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 46288CE7F78149438D24CE3A /* CDVAccelerometer.m */; };
+		DF8AB8EA48264B348C3B27CE /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FD5FB5102C48E5A32FB3F3 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,9 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = FlashLight/config.xml; sourceTree = "<group>"; };
+		46288CE7F78149438D24CE3A /* CDVAccelerometer.m */ = {isa = PBXFileReference; name = "CDVAccelerometer.m"; path = "cordova-plugin-device-motion/CDVAccelerometer.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		A921C452CCF94AADB38DF54B /* CDVAccelerometer.h */ = {isa = PBXFileReference; name = "CDVAccelerometer.h"; path = "cordova-plugin-device-motion/CDVAccelerometer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		25FD5FB5102C48E5A32FB3F3 /* CoreMotion.framework */ = {isa = PBXFileReference; name = "CoreMotion.framework"; path = "System/Library/Frameworks/CoreMotion.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 				991A6BAC582E48688EDBD4FC /* QuartzCore.framework in Frameworks */,
 				254856DAA04F438DB6C03658 /* CoreImage.framework in Frameworks */,
 				EE84CEB4EEBF4139ACCB1FD2 /* AudioToolbox.framework in Frameworks */,
+				DF8AB8EA48264B348C3B27CE /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +172,7 @@
 				D2F920BAE4BB472789583A4F /* QuartzCore.framework */,
 				88661EFBBE0B464E91F050DB /* CoreImage.framework */,
 				37FB13667B964253B18028BB /* AudioToolbox.framework */,
+				25FD5FB5102C48E5A32FB3F3 /* CoreMotion.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -197,6 +203,8 @@
 				0D102E4795E14706A251B944 /* CDVBarcodeScanner.mm */,
 				6D29E2874A9442F1AF8B31A2 /* zxing-all-in-one.cpp */,
 				D82E0C344B01461DB908B9B5 /* zxing-all-in-one.h */,
+				46288CE7F78149438D24CE3A /* CDVAccelerometer.m */,
+				A921C452CCF94AADB38DF54B /* CDVAccelerometer.h */,
 			);
 			name = Plugins;
 			path = FlashLight/Plugins;
@@ -239,7 +247,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 800;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = W9PK9UT4JJ;
@@ -321,6 +329,7 @@
 				B849442769F148A0B5ED932B /* Flashlight.m in Sources */,
 				496680020BA54EB7BDCDEB5D /* CDVBarcodeScanner.mm in Sources */,
 				1A78D837ADE947A69718FAEE /* zxing-all-in-one.cpp in Sources */,
+				C8A4C2FFFBA94DF081385D44 /* CDVAccelerometer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
