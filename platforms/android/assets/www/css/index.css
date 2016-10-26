@@ -1,5 +1,19 @@
 
-@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
+/*@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);*/
+@font-face {
+    font-family: 'Patrick Hand SC';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/Patrick-Hand-SC-regular/Patrick-Hand-SC-regular.eot');
+    src: url('../fonts/Patrick-Hand-SC-regular/Patrick-Hand-SC-regular.eot?#iefix') format('embedded-opentype'),
+    local('Patrick Hand SC'),
+    local('Patrick-Hand-SC-regular'),
+    url('../fonts/Patrick-Hand-SC-regular/Patrick-Hand-SC-regular.woff2') format('woff2'),
+    url('../fonts/Patrick-Hand-SC-regular/Patrick-Hand-SC-regular.woff') format('woff'),
+    url('../fonts/Patrick-Hand-SC-regular/Patrick-Hand-SC-regular.ttf') format('truetype'),
+    url('../fonts/Patrick-Hand-SC-regular/Patrick-Hand-SC-regular.svg#PatrickHandSC') format('svg');
+}
+
 *{
     box-sizing:border-box;
 }
@@ -85,4 +99,28 @@ border-bottom-left-radius:15px 255px;
 
 .disabled {
     background: #dddddd;
+}
+
+.mask {
+    visibility: hidden;
+    position: absolute;
+    left: 15%;
+    top: 12%;
+    width:70%;
+    height:70%;
+    text-align:center;
+    z-index: 1000;
+    background:rgba(255,227,235,1.0)
+}
+
+.reviveCounterText {
+    margin-top: 150px;
+    font-size: 28px;
+    text-align: center;
+}
+
+.reviveCounter {
+    margin-top: 50px;
+    font-size: 28px;
+    text-align: center;
 }
