@@ -341,6 +341,29 @@ function setReviveDiv(message) {
     reviveCountDiv.innerHTML = message;
 }
 
+function saveServerInfo() {
+    if (document.getElementById('serverURL').value == "" || document.getElementById('localID').value == "" ) {
+        window.alert("服务器不能为空");
+    } else {
+        //save in local storage
+        localStorage.setItem("serverURL", document.getElementById('serverURL').value);
+        localStorage.setItem("localID", document.getElementById('localID').value);
+    }
+}
+
+function showServerInfoPanel() {
+    document.getElementById('serverInfoPanel').style.display = "block";
+
+    //retrieve from local storage
+    document.getElementById('serverURL').value = localStorage.getItem("serverURL");
+    document.getElementById('localID').value = localStorage.getItem("localID");
+
+}
+
+function hideServerInfoPanel() {
+    document.getElementById('serverInfoPanel').style.display = "none";
+}
+
 function exitApp() {
     if (timer) {
         window.clearInterval(timer);
@@ -350,3 +373,5 @@ function exitApp() {
 }
 
 function onResume() {}
+
+
