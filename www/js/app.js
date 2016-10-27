@@ -38,7 +38,9 @@ document.addEventListener("resume", onResume, false);
 
 function init() {
     showMessage(CONNECTING_MESSAGE);
-    setInterval(function() { update(); }, 1000);
+    showBatteryLeft(counter);
+    registerListeners();
+    // setInterval(function() { update(); }, 1000);
 }
 
 function registerListeners() {
@@ -118,7 +120,7 @@ function revive(target_id) {
                 var time_left = JSON.parse(text).time_left;
                 if (time_left && time_left > 0) {
                     //if there is still reviving undergoing
-                    setReviveDiv("还剩" + time_left + "秒复活");
+                    setReviveDiv("正在复活：" + time_left);
                 } else if (time_left && time_left <= 0) {
                     endRevive("目标已经活灵活现了");
                 }
@@ -172,9 +174,9 @@ function scanQrCode() {
 
     //shortly turn on flashlight for 3 seconds
     window.plugins.flashlight.switchOn();
-    var flashlight_timer = setTimeout(function() {
-        window.plugins.flashlight.switchOff();
-    }, 3000);
+    // var flashlight_timer = setTimeout(function() {
+    //     window.plugins.flashlight.switchOff();
+    // }, 3000);
 
     setTimeout(function() {
         cordova.plugins.barcodeScanner.scan(
@@ -184,9 +186,11 @@ function scanQrCode() {
                         var text = result.text;
                         var substrs = text.split(',');
                         if (substrs[0] == 'battery') {
+                            //scanned the QR code of battery
                             recharge(substrs[1]);
                         } else if (substrs[0] == 'person') {
-
+                            //scanned the QR code of a person
+                            clearTimeout(flashlight_timer);
                             revive(substrs[1]);
                         }
                     }
@@ -210,9 +214,11 @@ function scanQrCode() {
 
 function recharge(battery_id) {
     //validate the battery and then recharge
-    requestServer('/client/battery?battery_id=' + battery_id, function(is_ok) {
-        counter = BATTERY_LIFE;
-        enableFlashLight();
+    requestServer('/client/battery?battery_id=' + battery_id, function(res) {
+        if (res == 'OK') {
+            counter = BATTERY_LIFE;
+            enableFlashLight();
+        }
     });
 }
 
