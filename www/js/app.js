@@ -1,6 +1,8 @@
 /*
  * Constant define
  */
+var SERVER_URL = "http://192.168.1.103:3000";
+var ID = 1;
 var BATTERY_LIFE = 400; //4000 milliseconds
 var LIGHT_ON = "开启手电";
 var LIGHT_OFF = "关闭手电";
@@ -8,8 +10,6 @@ var OUT_OF_BATTERY = "电池已经耗尽";
 var DEAD_MESSAGE = "你死了！";
 var WAIT_MESSAGE = "正在等待游戏开始...";
 var CONNECTING_MESSAGE = "正在连接服务器...";
-var SERVER_URL = "http://192.168.1.103:3000";
-var ID = 1;
 var MOVE_DETECT_SENSITIVITY = 5;
 var REVIVE_INTERVAL = 1 * 1000;
 
