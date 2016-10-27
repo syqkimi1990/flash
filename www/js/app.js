@@ -38,9 +38,9 @@ document.addEventListener("resume", onResume, false);
 
 function init() {
     showMessage(CONNECTING_MESSAGE);
-    // showBatteryLeft(counter);
-    // registerListeners();
-    setInterval(function() { update(); }, 1000);
+    showBatteryLeft(counter);
+    registerListeners();
+    // setInterval(function() { update(); }, 1000);
 }
 
 function registerListeners() {
