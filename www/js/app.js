@@ -1,8 +1,9 @@
 /*
  * Constant define
  */
-var SERVER_URL = "http://192.168.1.103:3000";
-var ID = 1;
+var DEF_SERVER_URL = "http://192.168.1.103:3000";
+var DEF_ID = 1;
+
 var BATTERY_LIFE = 400; //4000 milliseconds
 var LIGHT_ON = "开启手电";
 var LIGHT_OFF = "关闭手电";
@@ -11,7 +12,7 @@ var DEAD_MESSAGE = "你死了！";
 var WAIT_MESSAGE = "正在等待游戏开始...";
 var CONNECTING_MESSAGE = "正在连接服务器...";
 var MOVE_DETECT_SENSITIVITY = 5;
-var REVIVE_INTERVAL = 1 * 1000;
+var REVIVE_INTERVAL = 1 * 200;
 
 var light_on = false;
 
@@ -111,12 +112,16 @@ function revive(target_id) {
 
     function onReply(text) {
         if (reviving) {
-            var time_left = JSON.parse(text).time_left;
-            if (time_left && time_left > 0) {
-                //if there is still reviving undergoing
-                setReviveDiv("还剩" + time_left + "秒复活");
-            } else if (time_left && time_left <= 0) {
-                endRevive("复活成功");
+            if (text == "Error") {
+                endRevive("复活中断");
+            } else {
+                var time_left = JSON.parse(text).time_left;
+                if (time_left && time_left > 0) {
+                    //if there is still reviving undergoing
+                    setReviveDiv("还剩" + time_left + "秒复活");
+                } else if (time_left && time_left <= 0) {
+                    endRevive("目标已经活灵活现了");
+                }
             }
         }
     };
@@ -145,6 +150,7 @@ function revive(target_id) {
         } else
         //remove mask immediately if there is no message
             removeMask();
+        turnOffLight();
     }
 }
 
@@ -164,11 +170,11 @@ function reset() {
 
 function scanQrCode() {
 
-    // //shortly turn on flashlight for 3 seconds
-    // window.plugins.flashlight.switchOn();
-    // var flashlight_timer = setTimeout(function() {
-    //     window.plugins.flashlight.switchOff();
-    // }, 3000);
+    //shortly turn on flashlight for 3 seconds
+    window.plugins.flashlight.switchOn();
+    var flashlight_timer = setTimeout(function() {
+        window.plugins.flashlight.switchOff();
+    }, 3000);
 
     setTimeout(function() {
         cordova.plugins.barcodeScanner.scan(
@@ -251,9 +257,10 @@ function stopTimer() {
 
 //MARK: Game Status Tracking funcitons
 
-//automatically update player status from server
+//automatically update player status
 function update() {
-    requestServer('/client/status?player_id=' + ID, function(res) {
+    var id = getClientId();
+    requestServer('/client/status?player_id=' + id, function(res) {
         onReceivePlayerStatus(res);
     });
 }
@@ -275,7 +282,8 @@ function onReceivePlayerStatus(player_status) {
 
 function requestServer(url, callback) {
     //send a request to the server
-    url = SERVER_URL + url;
+    var server_addr = getServerAddr();
+    url = server_addr + url;
     if (url) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open('GET', url, true);
@@ -287,6 +295,26 @@ function requestServer(url, callback) {
                 }
             }
         }
+    }
+}
+
+function getServerAddr() {
+    if (!localStorage.getItem('serverURL'))
+        return null;
+    var server = 'http://' + localStorage.getItem('serverURL') + ':3000';;
+    if (server && server.length > 0) {
+        return server;
+    } else {
+        return DEF_SERVER_URL;
+    }
+}
+
+function getClientId() {
+    var client = localStorage.getItem("localID");
+    if (client && client > 0) {
+        return client;
+    } else {
+        return DEF_ID;
     }
 }
 
@@ -342,10 +370,11 @@ function setReviveDiv(message) {
 }
 
 function saveServerInfo() {
-    if (document.getElementById('serverURL').value == "" || document.getElementById('localID').value == "" ) {
-        window.alert("服务器不能为空");
+    if (document.getElementById('serverURL').value == "" || document.getElementById('localID').value == "") {
+        window.alert("两个都要认真填写哦！");
     } else {
         //save in local storage
+
         localStorage.setItem("serverURL", document.getElementById('serverURL').value);
         localStorage.setItem("localID", document.getElementById('localID').value);
     }
@@ -373,5 +402,3 @@ function exitApp() {
 }
 
 function onResume() {}
-
-
