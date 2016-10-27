@@ -1,7 +1,7 @@
 /*
  * Constant define
  */
-var DEF_SERVER_URL = "http://192.168.1.103:3000";
+var DEF_SERVER_URL = "192.168.1.103";
 var DEF_ID = 1;
 
 var BATTERY_LIFE = 400; //4000 milliseconds
@@ -38,9 +38,7 @@ document.addEventListener("resume", onResume, false);
 
 function init() {
     showMessage(CONNECTING_MESSAGE);
-    showBatteryLeft(counter);
-    registerListeners();
-    // setInterval(function() { update(); }, 1000);
+    setInterval(function() { update(); }, 1000);
 }
 
 function registerListeners() {
@@ -174,9 +172,9 @@ function scanQrCode() {
 
     //shortly turn on flashlight for 3 seconds
     window.plugins.flashlight.switchOn();
-    // var flashlight_timer = setTimeout(function() {
-    //     window.plugins.flashlight.switchOff();
-    // }, 3000);
+    var flashlight_timer = setTimeout(function() {
+        window.plugins.flashlight.switchOff();
+    }, 3000);
 
     setTimeout(function() {
         cordova.plugins.barcodeScanner.scan(

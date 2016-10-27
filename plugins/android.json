@@ -7,22 +7,21 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
         "cordova-plugin-flashlight": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
         "phonegap-plugin-barcodescanner": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
         "cordova-plugin-device-motion": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
-        }
-    },
-    "dependent_plugins": {
+        },
         "cordova-plugin-compat": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         }
-    }
+    },
+    "dependent_plugins": {}
 }

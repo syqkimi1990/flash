@@ -37,10 +37,10 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "cordova-plugin-flashlight": "3.2.0",
-    "cordova-plugin-whitelist": "1.3.0",
-    "cordova-plugin-compat": "1.0.0",
     "phonegap-plugin-barcodescanner": "6.0.3",
-    "cordova-plugin-device-motion": "1.2.2"
+    "cordova-plugin-whitelist": "1.3.0",
+    "cordova-plugin-device-motion": "1.2.2",
+    "cordova-plugin-compat": "1.0.0"
 };
 // BOTTOM OF METADATA
 });

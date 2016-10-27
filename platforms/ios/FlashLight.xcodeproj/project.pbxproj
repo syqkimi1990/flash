@@ -7,24 +7,25 @@
 	objects = {
 /* Begin PBXBuildFile section */
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
-		1A78D837ADE947A69718FAEE /* zxing-all-in-one.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D29E2874A9442F1AF8B31A2 /* zxing-all-in-one.cpp */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		254856DAA04F438DB6C03658 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88661EFBBE0B464E91F050DB /* CoreImage.framework */; };
 		301BF552109A68D80062928A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; };
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
-		496680020BA54EB7BDCDEB5D /* CDVBarcodeScanner.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D102E4795E14706A251B944 /* CDVBarcodeScanner.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		52B1FD93472947A18142EA8F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8F0A2167EC46EB9BC8DC15 /* AVFoundation.framework */; };
-		94FF998975B2413597CAE921 /* CDVBarcodeScanner.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 583B2221453A4E02BA76408C /* CDVBarcodeScanner.bundle */; };
-		960BFFC1DA6D45B1AE6F78BB /* scannerOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9343EE2DAA7A42839981D1D1 /* scannerOverlay.xib */; };
-		991A6BAC582E48688EDBD4FC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F920BAE4BB472789583A4F /* QuartzCore.framework */; };
-		B849442769F148A0B5ED932B /* Flashlight.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B1DC59805248579BE068A8 /* Flashlight.m */; };
-		C73275D962AC4936AA90C787 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64088F6F93F4387A941D5A2 /* CoreVideo.framework */; };
-		D579FE3D5AD14F019B115B76 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2111D19CE5BC4078A86CB784 /* libiconv.dylib */; };
-		EE84CEB4EEBF4139ACCB1FD2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FB13667B964253B18028BB /* AudioToolbox.framework */; };
-		C8A4C2FFFBA94DF081385D44 /* CDVAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 46288CE7F78149438D24CE3A /* CDVAccelerometer.m */; };
-		DF8AB8EA48264B348C3B27CE /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FD5FB5102C48E5A32FB3F3 /* CoreMotion.framework */; };
+		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
+		691C69EEB4D742FBB2DCD379 /* Flashlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FADE1B49C044566BE45996F /* Flashlight.m */; };
+		E95575F139EE40118CBB4A18 /* CDVBarcodeScanner.mm in Resources */ = {isa = PBXBuildFile; fileRef = C992115AE3724C8D98C2FACA /* CDVBarcodeScanner.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F9AC79C958584189B3C99CFE /* zxing-all-in-one.cpp in Resources */ = {isa = PBXBuildFile; fileRef = EF30F3509EE94E03A2AC0009 /* zxing-all-in-one.cpp */; };
+		85BECB03B28D4BD5B83531CF /* scannerOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B04C9DAB1B84FEDBAC1F433 /* scannerOverlay.xib */; };
+		881ABC21EF7D4BF6B1D91CD4 /* CDVBarcodeScanner.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4198F37348884EAFB9B69C0F /* CDVBarcodeScanner.bundle */; };
+		7302D4C2662E4BF9A880C0BA /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7C23F00C664CDFACAD6851 /* libiconv.dylib */; };
+		0E92BD59892C4842851418AF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C419405E54004192BEB3AB13 /* AVFoundation.framework */; };
+		A28AC1C3F74C4E1A8419A609 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67923BA40A5B49389632AF12 /* CoreVideo.framework */; };
+		BCBAF360B03A41D0A30859F3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14BF25764FB14218972B7CC6 /* QuartzCore.framework */; };
+		02D51B433DC3476E85A4E685 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA8F0CEC16444609DA07358 /* CoreImage.framework */; };
+		8FC53D958D5D45E5B54763F9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846A0603FD4744D79ACE7F94 /* AudioToolbox.framework */; };
+		4CA7F67BFAA64EF192B0C298 /* CDVAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 280D5476EF4F4208A0B7962A /* CDVAccelerometer.m */; };
+		42DB944BB8284F05BD9CEA3A /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFDCF754CAA413AB66C67AE /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,12 +47,9 @@
 
 /* Begin PBXFileReference section */
 		0207DA571B56EA530066E2B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FlashLight/Images.xcassets; sourceTree = SOURCE_ROOT; };
-		038070A65088485BAACA2954 /* Flashlight.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = Flashlight.h; path = "cordova-plugin-flashlight/Flashlight.h"; sourceTree = "<group>"; };
-		0D102E4795E14706A251B944 /* CDVBarcodeScanner.mm */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = CDVBarcodeScanner.mm; path = "phonegap-plugin-barcodescanner/CDVBarcodeScanner.mm"; sourceTree = "<group>"; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* FlashLight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashLight.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2111D19CE5BC4078A86CB784 /* libiconv.dylib */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
 		301BF56E109A69640062928A /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = SOURCE_ROOT; };
@@ -62,24 +60,28 @@
 		3047A5101AB8059700498E2A /* build-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "build-release.xcconfig"; path = "cordova/build-release.xcconfig"; sourceTree = SOURCE_ROOT; };
 		3047A5111AB8059700498E2A /* build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = build.xcconfig; path = cordova/build.xcconfig; sourceTree = SOURCE_ROOT; };
 		32CA4F630368D1EE00C91783 /* FlashLight-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlashLight-Prefix.pch"; sourceTree = "<group>"; };
-		37FB13667B964253B18028BB /* AudioToolbox.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		583B2221453A4E02BA76408C /* CDVBarcodeScanner.bundle */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.plug-in"; path = CDVBarcodeScanner.bundle; sourceTree = "<group>"; };
-		6D29E2874A9442F1AF8B31A2 /* zxing-all-in-one.cpp */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "zxing-all-in-one.cpp"; path = "phonegap-plugin-barcodescanner/zxing-all-in-one.cpp"; sourceTree = "<group>"; };
-		7C8F0A2167EC46EB9BC8DC15 /* AVFoundation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		88661EFBBE0B464E91F050DB /* CoreImage.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CDVLaunchScreen.storyboard; path = FlashLight/CDVLaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* FlashLight-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "FlashLight-Info.plist"; path = "FlashLight/FlashLight-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = SOURCE_ROOT; };
-		9343EE2DAA7A42839981D1D1 /* scannerOverlay.xib */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = file.xib; path = scannerOverlay.xib; sourceTree = "<group>"; };
-		C64088F6F93F4387A941D5A2 /* CoreVideo.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		D2B1DC59805248579BE068A8 /* Flashlight.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = Flashlight.m; path = "cordova-plugin-flashlight/Flashlight.m"; sourceTree = "<group>"; };
-		D2F920BAE4BB472789583A4F /* QuartzCore.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		D82E0C344B01461DB908B9B5 /* zxing-all-in-one.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "zxing-all-in-one.h"; path = "phonegap-plugin-barcodescanner/zxing-all-in-one.h"; sourceTree = "<group>"; };
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = FlashLight/config.xml; sourceTree = "<group>"; };
-		46288CE7F78149438D24CE3A /* CDVAccelerometer.m */ = {isa = PBXFileReference; name = "CDVAccelerometer.m"; path = "cordova-plugin-device-motion/CDVAccelerometer.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		A921C452CCF94AADB38DF54B /* CDVAccelerometer.h */ = {isa = PBXFileReference; name = "CDVAccelerometer.h"; path = "cordova-plugin-device-motion/CDVAccelerometer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		25FD5FB5102C48E5A32FB3F3 /* CoreMotion.framework */ = {isa = PBXFileReference; name = "CoreMotion.framework"; path = "System/Library/Frameworks/CoreMotion.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		0FADE1B49C044566BE45996F /* Flashlight.m */ = {isa = PBXFileReference; name = "Flashlight.m"; path = "cordova-plugin-flashlight/Flashlight.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		DE7ECDAEFF5347E882160675 /* Flashlight.h */ = {isa = PBXFileReference; name = "Flashlight.h"; path = "cordova-plugin-flashlight/Flashlight.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		C992115AE3724C8D98C2FACA /* CDVBarcodeScanner.mm */ = {isa = PBXFileReference; name = "CDVBarcodeScanner.mm"; path = "phonegap-plugin-barcodescanner/CDVBarcodeScanner.mm"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EF30F3509EE94E03A2AC0009 /* zxing-all-in-one.cpp */ = {isa = PBXFileReference; name = "zxing-all-in-one.cpp"; path = "phonegap-plugin-barcodescanner/zxing-all-in-one.cpp"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4487C507C8384429804E77A2 /* zxing-all-in-one.h */ = {isa = PBXFileReference; name = "zxing-all-in-one.h"; path = "phonegap-plugin-barcodescanner/zxing-all-in-one.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		6B04C9DAB1B84FEDBAC1F433 /* scannerOverlay.xib */ = {isa = PBXFileReference; name = "scannerOverlay.xib"; path = "scannerOverlay.xib"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = file.xib; explicitFileType = undefined; includeInIndex = 0; };
+		4198F37348884EAFB9B69C0F /* CDVBarcodeScanner.bundle */ = {isa = PBXFileReference; name = "CDVBarcodeScanner.bundle"; path = "CDVBarcodeScanner.bundle"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.plug-in; explicitFileType = undefined; includeInIndex = 0; };
+		7E7C23F00C664CDFACAD6851 /* libiconv.dylib */ = {isa = PBXFileReference; name = "libiconv.dylib"; path = "usr/lib/libiconv.dylib"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = compiled.mach-o.dylib; explicitFileType = undefined; includeInIndex = 0; };
+		C419405E54004192BEB3AB13 /* AVFoundation.framework */ = {isa = PBXFileReference; name = "AVFoundation.framework"; path = "System/Library/Frameworks/AVFoundation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		67923BA40A5B49389632AF12 /* CoreVideo.framework */ = {isa = PBXFileReference; name = "CoreVideo.framework"; path = "System/Library/Frameworks/CoreVideo.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		14BF25764FB14218972B7CC6 /* QuartzCore.framework */ = {isa = PBXFileReference; name = "QuartzCore.framework"; path = "System/Library/Frameworks/QuartzCore.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		ADA8F0CEC16444609DA07358 /* CoreImage.framework */ = {isa = PBXFileReference; name = "CoreImage.framework"; path = "System/Library/Frameworks/CoreImage.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		846A0603FD4744D79ACE7F94 /* AudioToolbox.framework */ = {isa = PBXFileReference; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		280D5476EF4F4208A0B7962A /* CDVAccelerometer.m */ = {isa = PBXFileReference; name = "CDVAccelerometer.m"; path = "cordova-plugin-device-motion/CDVAccelerometer.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		B0637EDC49544A4CACD0BDA7 /* CDVAccelerometer.h */ = {isa = PBXFileReference; name = "CDVAccelerometer.h"; path = "cordova-plugin-device-motion/CDVAccelerometer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		BBFDCF754CAA413AB66C67AE /* CoreMotion.framework */ = {isa = PBXFileReference; name = "CoreMotion.framework"; path = "System/Library/Frameworks/CoreMotion.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,13 +90,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
-				D579FE3D5AD14F019B115B76 /* libiconv.dylib in Frameworks */,
-				52B1FD93472947A18142EA8F /* AVFoundation.framework in Frameworks */,
-				C73275D962AC4936AA90C787 /* CoreVideo.framework in Frameworks */,
-				991A6BAC582E48688EDBD4FC /* QuartzCore.framework in Frameworks */,
-				254856DAA04F438DB6C03658 /* CoreImage.framework in Frameworks */,
-				EE84CEB4EEBF4139ACCB1FD2 /* AudioToolbox.framework in Frameworks */,
-				DF8AB8EA48264B348C3B27CE /* CoreMotion.framework in Frameworks */,
+				7302D4C2662E4BF9A880C0BA /* libiconv.dylib in Frameworks */,
+				0E92BD59892C4842851418AF /* AVFoundation.framework in Frameworks */,
+				A28AC1C3F74C4E1A8419A609 /* CoreVideo.framework in Frameworks */,
+				BCBAF360B03A41D0A30859F3 /* QuartzCore.framework in Frameworks */,
+				02D51B433DC3476E85A4E685 /* CoreImage.framework in Frameworks */,
+				8FC53D958D5D45E5B54763F9 /* AudioToolbox.framework in Frameworks */,
+				42DB944BB8284F05BD9CEA3A /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,8 +158,9 @@
 				0207DA571B56EA530066E2B4 /* Images.xcassets */,
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* FlashLight-Info.plist */,
-				9343EE2DAA7A42839981D1D1 /* scannerOverlay.xib */,
-				583B2221453A4E02BA76408C /* CDVBarcodeScanner.bundle */,
+				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
+				6B04C9DAB1B84FEDBAC1F433 /* scannerOverlay.xib */,
+				4198F37348884EAFB9B69C0F /* CDVBarcodeScanner.bundle */,
 			);
 			name = Resources;
 			path = FlashLight/Resources;
@@ -166,13 +169,13 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2111D19CE5BC4078A86CB784 /* libiconv.dylib */,
-				7C8F0A2167EC46EB9BC8DC15 /* AVFoundation.framework */,
-				C64088F6F93F4387A941D5A2 /* CoreVideo.framework */,
-				D2F920BAE4BB472789583A4F /* QuartzCore.framework */,
-				88661EFBBE0B464E91F050DB /* CoreImage.framework */,
-				37FB13667B964253B18028BB /* AudioToolbox.framework */,
-				25FD5FB5102C48E5A32FB3F3 /* CoreMotion.framework */,
+				7E7C23F00C664CDFACAD6851 /* libiconv.dylib */,
+				C419405E54004192BEB3AB13 /* AVFoundation.framework */,
+				67923BA40A5B49389632AF12 /* CoreVideo.framework */,
+				14BF25764FB14218972B7CC6 /* QuartzCore.framework */,
+				ADA8F0CEC16444609DA07358 /* CoreImage.framework */,
+				846A0603FD4744D79ACE7F94 /* AudioToolbox.framework */,
+				BBFDCF754CAA413AB66C67AE /* CoreMotion.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -198,13 +201,13 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				D2B1DC59805248579BE068A8 /* Flashlight.m */,
-				038070A65088485BAACA2954 /* Flashlight.h */,
-				0D102E4795E14706A251B944 /* CDVBarcodeScanner.mm */,
-				6D29E2874A9442F1AF8B31A2 /* zxing-all-in-one.cpp */,
-				D82E0C344B01461DB908B9B5 /* zxing-all-in-one.h */,
-				46288CE7F78149438D24CE3A /* CDVAccelerometer.m */,
-				A921C452CCF94AADB38DF54B /* CDVAccelerometer.h */,
+				0FADE1B49C044566BE45996F /* Flashlight.m */,
+				DE7ECDAEFF5347E882160675 /* Flashlight.h */,
+				C992115AE3724C8D98C2FACA /* CDVBarcodeScanner.mm */,
+				EF30F3509EE94E03A2AC0009 /* zxing-all-in-one.cpp */,
+				4487C507C8384429804E77A2 /* zxing-all-in-one.h */,
+				280D5476EF4F4208A0B7962A /* CDVAccelerometer.m */,
+				B0637EDC49544A4CACD0BDA7 /* CDVAccelerometer.h */,
 			);
 			name = Plugins;
 			path = FlashLight/Plugins;
@@ -247,7 +250,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 800;
+				LastUpgradeCheck = 510;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = W9PK9UT4JJ;
@@ -293,8 +296,9 @@
 			files = (
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
-				960BFFC1DA6D45B1AE6F78BB /* scannerOverlay.xib in Resources */,
-				94FF998975B2413597CAE921 /* CDVBarcodeScanner.bundle in Resources */,
+				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
+				85BECB03B28D4BD5B83531CF /* scannerOverlay.xib in Resources */,
+				881ABC21EF7D4BF6B1D91CD4 /* CDVBarcodeScanner.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,10 +330,10 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				B849442769F148A0B5ED932B /* Flashlight.m in Sources */,
-				496680020BA54EB7BDCDEB5D /* CDVBarcodeScanner.mm in Sources */,
-				1A78D837ADE947A69718FAEE /* zxing-all-in-one.cpp in Sources */,
-				C8A4C2FFFBA94DF081385D44 /* CDVAccelerometer.m in Sources */,
+				691C69EEB4D742FBB2DCD379 /* Flashlight.m in Sources */,
+				E95575F139EE40118CBB4A18 /* CDVBarcodeScanner.mm in Resources */,
+				F9AC79C958584189B3C99CFE /* zxing-all-in-one.cpp in Resources */,
+				4CA7F67BFAA64EF192B0C298 /* CDVAccelerometer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,9 +366,8 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "FlashLight/FlashLight-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tron.flashlight;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tron.hellocordova;
 				PRODUCT_NAME = FlashLight;
 			};
 			name = Debug;
@@ -385,8 +388,8 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "FlashLight/FlashLight-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				PRODUCT_BUNDLE_IDENTIFIER = tron.flashlight;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tron.hellocordova;
 				PRODUCT_NAME = FlashLight;
 			};
 			name = Release;
@@ -401,24 +404,16 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
@@ -435,23 +430,16 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 			};
@@ -467,7 +455,7 @@
 				1D6058950D05DD3E006BFB54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FlashLight" */ = {
 			isa = XCConfigurationList;
@@ -476,7 +464,7 @@
 				C01FCF5008A954540054247B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
