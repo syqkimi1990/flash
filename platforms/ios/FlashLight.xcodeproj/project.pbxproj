@@ -13,11 +13,6 @@
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
-		691C69EEB4D742FBB2DCD379 /* Flashlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FADE1B49C044566BE45996F /* Flashlight.m */; };
-		E95575F139EE40118CBB4A18 /* CDVBarcodeScanner.mm in Resources */ = {isa = PBXBuildFile; fileRef = C992115AE3724C8D98C2FACA /* CDVBarcodeScanner.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F9AC79C958584189B3C99CFE /* zxing-all-in-one.cpp in Resources */ = {isa = PBXBuildFile; fileRef = EF30F3509EE94E03A2AC0009 /* zxing-all-in-one.cpp */; };
-		85BECB03B28D4BD5B83531CF /* scannerOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B04C9DAB1B84FEDBAC1F433 /* scannerOverlay.xib */; };
-		881ABC21EF7D4BF6B1D91CD4 /* CDVBarcodeScanner.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4198F37348884EAFB9B69C0F /* CDVBarcodeScanner.bundle */; };
 		7302D4C2662E4BF9A880C0BA /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7C23F00C664CDFACAD6851 /* libiconv.dylib */; };
 		0E92BD59892C4842851418AF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C419405E54004192BEB3AB13 /* AVFoundation.framework */; };
 		A28AC1C3F74C4E1A8419A609 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67923BA40A5B49389632AF12 /* CoreVideo.framework */; };
@@ -26,6 +21,7 @@
 		8FC53D958D5D45E5B54763F9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846A0603FD4744D79ACE7F94 /* AudioToolbox.framework */; };
 		4CA7F67BFAA64EF192B0C298 /* CDVAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 280D5476EF4F4208A0B7962A /* CDVAccelerometer.m */; };
 		42DB944BB8284F05BD9CEA3A /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFDCF754CAA413AB66C67AE /* CoreMotion.framework */; };
+		63C8E839A4174127A7C7DF09 /* QRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22EA2CDE63248DA9EF0B6C1 /* QRScanner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,13 +62,6 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = FlashLight/config.xml; sourceTree = "<group>"; };
-		0FADE1B49C044566BE45996F /* Flashlight.m */ = {isa = PBXFileReference; name = "Flashlight.m"; path = "cordova-plugin-flashlight/Flashlight.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		DE7ECDAEFF5347E882160675 /* Flashlight.h */ = {isa = PBXFileReference; name = "Flashlight.h"; path = "cordova-plugin-flashlight/Flashlight.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		C992115AE3724C8D98C2FACA /* CDVBarcodeScanner.mm */ = {isa = PBXFileReference; name = "CDVBarcodeScanner.mm"; path = "phonegap-plugin-barcodescanner/CDVBarcodeScanner.mm"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EF30F3509EE94E03A2AC0009 /* zxing-all-in-one.cpp */ = {isa = PBXFileReference; name = "zxing-all-in-one.cpp"; path = "phonegap-plugin-barcodescanner/zxing-all-in-one.cpp"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		4487C507C8384429804E77A2 /* zxing-all-in-one.h */ = {isa = PBXFileReference; name = "zxing-all-in-one.h"; path = "phonegap-plugin-barcodescanner/zxing-all-in-one.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		6B04C9DAB1B84FEDBAC1F433 /* scannerOverlay.xib */ = {isa = PBXFileReference; name = "scannerOverlay.xib"; path = "scannerOverlay.xib"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = file.xib; explicitFileType = undefined; includeInIndex = 0; };
-		4198F37348884EAFB9B69C0F /* CDVBarcodeScanner.bundle */ = {isa = PBXFileReference; name = "CDVBarcodeScanner.bundle"; path = "CDVBarcodeScanner.bundle"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.plug-in; explicitFileType = undefined; includeInIndex = 0; };
 		7E7C23F00C664CDFACAD6851 /* libiconv.dylib */ = {isa = PBXFileReference; name = "libiconv.dylib"; path = "usr/lib/libiconv.dylib"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = compiled.mach-o.dylib; explicitFileType = undefined; includeInIndex = 0; };
 		C419405E54004192BEB3AB13 /* AVFoundation.framework */ = {isa = PBXFileReference; name = "AVFoundation.framework"; path = "System/Library/Frameworks/AVFoundation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		67923BA40A5B49389632AF12 /* CoreVideo.framework */ = {isa = PBXFileReference; name = "CoreVideo.framework"; path = "System/Library/Frameworks/CoreVideo.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
@@ -82,6 +71,7 @@
 		280D5476EF4F4208A0B7962A /* CDVAccelerometer.m */ = {isa = PBXFileReference; name = "CDVAccelerometer.m"; path = "cordova-plugin-device-motion/CDVAccelerometer.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		B0637EDC49544A4CACD0BDA7 /* CDVAccelerometer.h */ = {isa = PBXFileReference; name = "CDVAccelerometer.h"; path = "cordova-plugin-device-motion/CDVAccelerometer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		BBFDCF754CAA413AB66C67AE /* CoreMotion.framework */ = {isa = PBXFileReference; name = "CoreMotion.framework"; path = "System/Library/Frameworks/CoreMotion.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		E22EA2CDE63248DA9EF0B6C1 /* QRScanner.swift */ = {isa = PBXFileReference; name = "QRScanner.swift"; path = "cordova-plugin-qrscanner/QRScanner.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,8 +149,6 @@
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* FlashLight-Info.plist */,
 				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
-				6B04C9DAB1B84FEDBAC1F433 /* scannerOverlay.xib */,
-				4198F37348884EAFB9B69C0F /* CDVBarcodeScanner.bundle */,
 			);
 			name = Resources;
 			path = FlashLight/Resources;
@@ -201,13 +189,9 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				0FADE1B49C044566BE45996F /* Flashlight.m */,
-				DE7ECDAEFF5347E882160675 /* Flashlight.h */,
-				C992115AE3724C8D98C2FACA /* CDVBarcodeScanner.mm */,
-				EF30F3509EE94E03A2AC0009 /* zxing-all-in-one.cpp */,
-				4487C507C8384429804E77A2 /* zxing-all-in-one.h */,
 				280D5476EF4F4208A0B7962A /* CDVAccelerometer.m */,
 				B0637EDC49544A4CACD0BDA7 /* CDVAccelerometer.h */,
+				E22EA2CDE63248DA9EF0B6C1 /* QRScanner.swift */,
 			);
 			name = Plugins;
 			path = FlashLight/Plugins;
@@ -297,8 +281,6 @@
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
-				85BECB03B28D4BD5B83531CF /* scannerOverlay.xib in Resources */,
-				881ABC21EF7D4BF6B1D91CD4 /* CDVBarcodeScanner.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,10 +312,8 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				691C69EEB4D742FBB2DCD379 /* Flashlight.m in Sources */,
-				E95575F139EE40118CBB4A18 /* CDVBarcodeScanner.mm in Resources */,
-				F9AC79C958584189B3C99CFE /* zxing-all-in-one.cpp in Resources */,
 				4CA7F67BFAA64EF192B0C298 /* CDVAccelerometer.m in Sources */,
+				63C8E839A4174127A7C7DF09 /* QRScanner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +349,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tron.hellocordova;
 				PRODUCT_NAME = FlashLight;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Bridging-Header.h";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -391,6 +374,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tron.hellocordova;
 				PRODUCT_NAME = FlashLight;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Bridging-Header.h";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -417,6 +403,9 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Bridging-Header.h";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -442,6 +431,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Bridging-Header.h";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

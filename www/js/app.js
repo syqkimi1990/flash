@@ -1,6 +1,7 @@
 /*
  * Constant define
  */
+
 var DEF_SERVER_URL = "192.168.1.103";
 var DEF_ID = 1;
 
@@ -38,9 +39,13 @@ document.addEventListener("resume", onResume, false);
 
 function init() {
     showMessage(CONNECTING_MESSAGE);
-    showBatteryLeft(counter);
-    registerListeners();
-    // setInterval(function() { update(); }, 1000);
+    setInterval(function() { update(); }, 1000);
+    //prepare the QRScanner
+    QRScanner.prepare(function(err,status){
+        if(err){
+            alert("QR scanner failed!");
+        }
+    })
 }
 
 function registerListeners() {
@@ -59,18 +64,17 @@ function onClickInteract() {
     //disable recharge button when it is pressed
     shortlyDisableButton(interactButton);
     stopTimer();
-    scanQrCode();
+    interact();
 }
 
 function onClickFlashLightButton() {
     //disable the flashlight button to prevent faster click
     shortlyDisableButton(flashLightButton);
     shortlyLockUI();
-
     window.plugins.flashlight.available(function(isAvailable) {
         if (isAvailable) {
             //Switch on the flashlight
-            if (window.plugins.flashlight.isSwitchedOn() == false && counter > 0 && flashLightButton.innerHTML == LIGHT_ON) {
+            if (counter > 0 && flashLightButton.innerHTML == LIGHT_ON) {
                 turnOnLight();
             } else if (flashLightButton.innerHTML == LIGHT_OFF) {
                 turnOffLight();

@@ -15,14 +15,11 @@
         <param name="ios-package" value="CDVGestureHandler" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="Flashlight">
-        <param name="ios-package" value="Flashlight" />
-    </feature>
-    <feature name="BarcodeScanner">
-        <param name="ios-package" value="CDVBarcodeScanner" />
-    </feature>
     <feature name="Accelerometer">
         <param name="ios-package" value="CDVAccelerometer" />
+    </feature>
+    <feature name="QRScanner">
+        <param name="ios-package" value="QRScanner" />
     </feature>
     <name>FlashLight</name>
     <description>

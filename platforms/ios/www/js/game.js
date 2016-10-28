@@ -1,5 +1,9 @@
 //MARK: Game logic functions
 
+var LIGHT_SUPPLY_LENGTH = 2000; //light turned on for 2 seconds when the scan button is pressed
+
+var scanSuccessSFX = document.getElementById("scan-success");
+
 function revive(target_id) {
     var reviving = true;
     turnOnLight();
@@ -63,16 +67,15 @@ function revive(target_id) {
         //remove mask immediately if there is no message
             removeMask();
         //if battery is not dead, turn off flash light. otherwise it will be automatically turned off
-        if (count >0)
+        if (count > 0)
             turnOffLight();
     }
 }
 
 function reset() {
     //if the reset is pressed when the light is on, turn off it first
-    if (window.plugins.flashlight.isSwitchedOn()) {
-        turnOffLight();
-    }
+    turnOffLight();
+
     enableFlashLight();
 
     //Reset the program variables
@@ -80,42 +83,49 @@ function reset() {
     counter = BATTERY_LIFE;
 }
 
-function scanQrCode() {
+function interact() {
+    QRScanner.getStatus(function(status) {
+        if (status.scanning == true || status.showing == true) {
+            cancelScan();
+        } else if (status.scanning == false || status.showing == false) {
+            scan();
+        }
+    })
+}
 
-    //shortly turn on flashlight for 3 seconds
-    window.plugins.flashlight.switchOn();
-    var flashlight_timer = setTimeout(function() {
-        window.plugins.flashlight.switchOff();
-    }, 3000);
+function cancelScan() {
+    QRScanner.hide();
+    QRScanner.cancelScan();
+}
 
+function scan() {
     setTimeout(function() {
-        cordova.plugins.barcodeScanner.scan(
-            function(result) {
-                if (!result.cancelled) {
-                    if (result.format == "QR_CODE") {
-                        var text = result.text;
-                        var substrs = text.split(',');
-                        if (substrs[0] == 'battery') {
-                            //scanned the QR code of battery
-                            recharge(substrs[1]);
-                            turnOffLight();
-                        } else if (substrs[0] == 'person') {
-                            //scanned the QR code of a person
-                            clearTimeout(flashlight_timer);
-                            revive(substrs[1]);
-                        }
+        //shortly turn on flashlight for supplying qr scan
+        turnOnLight(true);
+        var flashlight_timer = setTimeout(function() {
+            turnOffLight();
+        }, LIGHT_SUPPLY_LENGTH);
+
+        QRScanner.scan(
+            function(err, text) {
+                if (text) {
+                    scanSuccessSFX.play();
+                    var substrs = text.split(',');
+                    if (substrs[0] == 'battery') {
+                        //scanned the QR code of battery
+                        recharge(substrs[1]);
+                        turnOffLight();
+                    } else if (substrs[0] == 'person') {
+                        //scanned the QR code of a person
+                        clearTimeout(flashlight_timer);
+                        revive(substrs[1]);
                     }
-                } else {
-                    //turn off light if scan is cancelled
-                    turnOffLight();
                 }
-            },
-            function(error) {
-                window.alert("Scanning failed: " + error);
+                QRScanner.hide();
             }
         );
-    }, 100);
-
+        QRScanner.show(function(status) {});
+    }, 500);
 }
 
 function recharge(battery_id) {
@@ -128,22 +138,26 @@ function recharge(battery_id) {
     });
 }
 
-function turnOnLight() {
-    window.plugins.flashlight.switchOn(function() {},
-        function() {
-            alert("Flashlight switch on fails");
-            window.plugins.flashlight.switchOff();
-        }, { 'intensity': 0.5 });
-    startTimer();
+function turnOnLight(ignore_timer) {
+    window.QRScanner.enableLight(function(err, status) {
+        err && console.error(err);
+        console.log(status);
+    });
+    if (!ignore_timer)
+        startTimer();
     // Change light button text
     flashLightButton.innerHTML = LIGHT_OFF;
 }
 
 
 function turnOffLight() {
+    window.QRScanner.disableLight(function(err, status) {
+        err && console.error(err);
+        console.log(status);
+    });
+
     stopTimer();
     flashLightButton.innerHTML = LIGHT_ON;
-    window.plugins.flashlight.switchOff(function() {}, function() { window.alert("Flashlight switch off fails"); });
 }
 
 function startTimer() {
@@ -162,9 +176,7 @@ function startTimer() {
 
 
 function die() {
-    if (window.plugins.flashlight.isSwitchedOn()) {
-        turnOffLight();
-    }
+    turnOffLight();
 }
 
 function stopTimer() {
