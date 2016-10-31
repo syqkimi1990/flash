@@ -1,6 +1,9 @@
 //MARK: Game logic functions
 
+var MOVE_DETECT_SENSITIVITY = 3;
 var LIGHT_SUPPLY_LENGTH = 2000; //light turned on for 2 seconds when the scan button is pressed
+var counter
+var battery_life = 400; //4000 milliseconds
 
 var scanSuccessSFX = document.getElementById("scan-success");
 
@@ -67,20 +70,24 @@ function revive(target_id) {
         //remove mask immediately if there is no message
             removeMask();
         //if battery is not dead, turn off flash light. otherwise it will be automatically turned off
-        if (count > 0)
+        if(counter > 0)
             turnOffLight();
     }
 }
 
 function reset() {
+    update();
     //if the reset is pressed when the light is on, turn off it first
+    setup();
     turnOffLight();
 
     enableFlashLight();
 
     //Reset the program variables
     timer = null;
-    counter = BATTERY_LIFE;
+    counter = battery_life;
+
+    showId();
 }
 
 function interact() {
@@ -99,6 +106,7 @@ function cancelScan() {
 }
 
 function scan() {
+    QRScanner.show(function(status) {});
     setTimeout(function() {
         //shortly turn on flashlight for supplying qr scan
         turnOnLight(true);
@@ -124,7 +132,6 @@ function scan() {
                 QRScanner.hide();
             }
         );
-        QRScanner.show(function(status) {});
     }, 500);
 }
 
@@ -132,7 +139,7 @@ function recharge(battery_id) {
     //validate the battery and then recharge
     requestServer('/client/battery?battery_id=' + battery_id, function(res) {
         if (res == 'OK') {
-            counter = BATTERY_LIFE;
+            counter = battery_life;
             enableFlashLight();
         }
     });

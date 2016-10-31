@@ -2,18 +2,14 @@
  * Constant define
  */
 
-var DEF_SERVER_URL = "192.168.1.103";
-var DEF_ID = 1;
-
-var BATTERY_LIFE = 400; //4000 milliseconds
 var LIGHT_ON = "开启手电";
 var LIGHT_OFF = "关闭手电";
 var OUT_OF_BATTERY = "电池已经耗尽";
 var DEAD_MESSAGE = "你死了！";
 var WAIT_MESSAGE = "正在等待游戏开始...";
 var CONNECTING_MESSAGE = "正在连接服务器...";
-var MOVE_DETECT_SENSITIVITY = 5;
-var REVIVE_INTERVAL = 1 * 200;
+var REVIVE_MESSAGE = "正在复活...";
+
 
 var light_on = false;
 
@@ -25,7 +21,7 @@ var reviveCountDiv = document.getElementById("reviveCounter");
 var flashLightButton = document.getElementById("flashLight");
 var interactButton = document.getElementById("interact");
 var timer = null;
-var counter = BATTERY_LIFE;
+
 
 /*
  ** Add event listeners
@@ -41,11 +37,13 @@ function init() {
     showMessage(CONNECTING_MESSAGE);
     setInterval(function() { update(); }, 1000);
     //prepare the QRScanner
-    QRScanner.prepare(function(err,status){
-        if(err){
+    QRScanner.prepare(function(err, status) {
+        if (err) {
             alert("QR scanner failed!");
         }
-    })
+    });
+    //initialize and reset
+    reset();
 }
 
 function registerListeners() {
@@ -71,20 +69,15 @@ function onClickFlashLightButton() {
     //disable the flashlight button to prevent faster click
     shortlyDisableButton(flashLightButton);
     shortlyLockUI();
-    window.plugins.flashlight.available(function(isAvailable) {
-        if (isAvailable) {
-            //Switch on the flashlight
-            if (counter > 0 && flashLightButton.innerHTML == LIGHT_ON) {
-                turnOnLight();
-            } else if (flashLightButton.innerHTML == LIGHT_OFF) {
-                turnOffLight();
-            } else {
-                //do nothing as in this condition the battery may run out
-            }
-        } else {
-            window.alert("Flashlight not available on this device");
-        }
-    });
+
+    //Switch on the flashlight
+    if (counter > 0 && flashLightButton.innerHTML == LIGHT_ON) {
+        turnOnLight();
+    } else if (flashLightButton.innerHTML == LIGHT_OFF) {
+        turnOffLight();
+    } else {
+        //do nothing as in this condition the battery may run out
+    }
 
 }
 

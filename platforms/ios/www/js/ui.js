@@ -1,3 +1,4 @@
+
 //MARK: UI Control Functions
 
 function showBatteryLeft(battery_left) {
@@ -71,4 +72,12 @@ function showServerInfoPanel() {
 
 function hideServerInfoPanel() {
     document.getElementById('serverInfoPanel').style.display = "none";
+}
+
+function showId() {
+    var id = localStorage.getItem("localID");
+    if (id)
+        document.getElementById('id-text').innerHTML = "玩家编号："+localStorage.getItem("localID");
+    else
+        document.getElementById('id-text').innerHTML = "玩家编号：";
 }

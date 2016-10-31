@@ -11,13 +11,16 @@
 <body>
     <!-- Fill in the server info -->
     <button id="setting" onclick="showServerInfoPanel()">设置</button>
+    <div id="id-banner">
+        <p style="text-align: center;" id="id-text">编号：</p>
+    </div>
     <p style="text-align: center">
         <button id="interact" class='lined thin'>充电／复活</button>
     </p>
     <p style="text-align: center">
         <button id="flashLight" class='lined thin'>开启手电</button>
     </p>
-    <div id="results" class='countdown'>剩余电池时间 (秒): 40.0</div>
+    <div id="results" class='countdown'>初始化中...</div>
     <div id="mask" class='mask'>
         <p class='reviveCounterText'>不要移动你的脚步！</p>
         <p id="reviveCounter" class='reviveCounter'>10</p>
@@ -30,7 +33,7 @@
                 <hr class='serverPanelHr'>
                 <p>服务器</p>
                 <input id="serverURL" name="serverURL" type="text">
-                <p>本机ID</p>
+                <p>玩家编号</p>
                 <input id="localID" name="localID" type="text">
                 <button id="btnServerFormSave" class='btnSave' onclick="saveServerInfo()">保存</button>
                 <button id="btnServerFormCancel" class='btnCancel' onclick="hideServerInfoPanel()">取消</button>

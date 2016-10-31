@@ -30,7 +30,8 @@ module.exports.metadata =
 {
     "cordova-plugin-whitelist": "1.3.0",
     "cordova-plugin-device-motion": "1.2.2",
-    "cordova-plugin-qrscanner": "2.4.0"
+    "cordova-plugin-qrscanner": "2.4.0",
+    "cordova-plugin-compat": "1.0.0"
 };
 // BOTTOM OF METADATA
 });
